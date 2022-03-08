@@ -1,4 +1,5 @@
 {
-    "sketch": "index.ino",
-    "board": "arduino:avr:uno"
+    "sketch": "ArduinoInternet.ino",
+    "board": "arduino:avr:uno",
+    "port": "/dev/tty.usbserial-1410"
 }

@@ -6,10 +6,7 @@ using namespace std;
 
 Chungus* createChungus (unsigned int size) {
 	assert(size>0);
-	Chungus* chonker = new Chungus;
-	chonker->length = size;
-	chonker->bytes = new Nibble[size/2];
-	memset(chonker->bytes, 0, size/2);
+	Chungus* chonker = new Chungus{size, new Nibble[size/2]{}};
 	return chonker;
 }
 
@@ -24,7 +21,7 @@ unsigned short int getChungusDigit(Chungus* chonker, int index) {
 	if (index%2==0) return chonker->bytes[index/2].first;
 	else return chonker->bytes[index/2].second;
 }
-Chungus *MultiplyBigChungi(Chungus *chonker1, struct Chungus *chonker2){
+Chungus *MultiplyBigChungi(Chungus *chonker1, Chungus *chonker2){
 	int maxSize = chonker1->length + chonker2->length;
 	Chungus* newChonker = createChungus(maxSize);
 	short unsigned int carry = 0;
